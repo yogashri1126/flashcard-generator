@@ -1,28 +1,29 @@
 module.exports = clozeCard
-var partial=" "
-var fullText= " "
+// var partial=" "
+// var fullText= " "
 
 var clozeCard= new ClozeCard()
 
-	
+function ClozeCard(fullText, cloze){
 
-function ClozeCard(text, cloze){
-
-	this.text= text;
+	this.fullText= fullText
 	this.cloze= cloze;
 
-	this.partial=partial
-	this.fullText= fullText
+this.partial=function(){
+return	this.fullText.replace(cloze, "___________ ")}
+
 }
 
+
+
 var firstPresidentCloze = new ClozeCard(
-    "George Washington was the first president of the United States.", "George Washington");
+	"George Washington was the first president of the United States.", "George Washington");
 
 // "George Washington"
 console.log(firstPresidentCloze.cloze); 
 
 // " ... was the first president of the United States.
-console.log(firstPresidentCloze.partial); 
+console.log(firstPresidentCloze.partial()); 
 
 // "George Washington was the first president of the United States.
 console.log(firstPresidentCloze.fullText)
