@@ -1,5 +1,6 @@
 //module.exports = clozeCard
     // var partial=" "
+var inquirer = require("inquirer");
 var question = ""
 var result = ""
 var answers = []
@@ -22,10 +23,19 @@ if (process.argv[2] === "result") {
 console.log(result)
 }
 
- var firstPresidentCloze = new ClozeCard(
-    question, result);
- 	console.log(question)
- 	console.log(result)
+ 
+
+inquirer.prompt([
+  {
+    fullText: "question",
+    cloze: "answer"
+  }]).then(function(answers) {
+  // initializes the variable newGuy to be a programmer object which will take
+  // in all of the user's answers to the questions above
+  var firstPresidentCloze = new ClozeCard(
+    fullText, cloze);
+ 	console.log(fullText)
+ 	console.log(cloze)
 
 	function ClozeCard(fullText, cloze) {
 
@@ -38,14 +48,25 @@ console.log(result)
 }
 //var clozeCard = new ClozeCard()
 // "George Washington"
-if (process.argv[2] === "cloze") {
-    //console.log(firstPresidentCloze.cloze);
-    answers.push(firstPresidentCloze.cloze)
-    //console.log(answers)
-    console.log(firstPresidentCloze.partial());
-    console.log(firstPresidentCloze.fullText)
-
-}
+// if (process.argv[2] === "cloze") {
+//     //console.log(firstPresidentCloze.cloze);
+//     answers.push(firstPresidentCloze.cloze)
+//     //console.log(answers)
+//     console.log(firstPresidentCloze.partial());
+//     console.log(firstPresidentCloze.fullText)
+// }
+  // printInfo method is run to show that the newguy object was successfully created and filled
+  firstPresidentCloze.printInfo();
+});
+//     name: "position",
+//     message: "What is your current position?"
+//   }, {
+//     name: "age",
+//     message: "How old are you?"
+//   }, {
+//     name: "language",
+//     message: "What is your favorite programming language?"
+//   }
 
 
 
