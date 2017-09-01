@@ -9,33 +9,29 @@ var answers = []
 
 
 
-if (process.argv[2] === "fullText") {
-    for (i = 3; i < process.argv.length; i++) {
-        question = question+ process.argv[i] + " "
-    }
-	console.log(question)
-}
+// if (process.argv[2] === "fullText") {
+//     for (i = 3; i < process.argv.length; i++) {
+//         question = question+ process.argv[i] + " "
+//     }
+// 	console.log(question)
+// }
 
-if (process.argv[2] === "result") {
-    for (i = 3; i < process.argv.length; i++) {
-        result = result+ process.argv[i] + " "
-    }
-console.log(result)
-}
-
- 
+// if (process.argv[2] === "result") {
+//     for (i = 3; i < process.argv.length; i++) {
+//         result = result+ process.argv[i] + " "
+//     }
+// console.log(result)
+// }
 
 inquirer.prompt([
   {
-    fullText: "question",
-    cloze: "answer"
+    name: "answer",
+    message: "question"
   }]).then(function(answers) {
   // initializes the variable newGuy to be a programmer object which will take
   // in all of the user's answers to the questions above
   var firstPresidentCloze = new ClozeCard(
-    fullText, cloze);
- 	console.log(fullText)
- 	console.log(cloze)
+    answers.message, answers.name);
 
 	function ClozeCard(fullText, cloze) {
 
@@ -47,16 +43,16 @@ inquirer.prompt([
     }
 }
 //var clozeCard = new ClozeCard()
-// "George Washington"
+// "George Washington
 // if (process.argv[2] === "cloze") {
-//     //console.log(firstPresidentCloze.cloze);
+console.log(firstPresidentCloze.cloze);
 //     answers.push(firstPresidentCloze.cloze)
 //     //console.log(answers)
-//     console.log(firstPresidentCloze.partial());
-//     console.log(firstPresidentCloze.fullText)
+console.log(firstPresidentCloze.partial());
+console.log(firstPresidentCloze.fullText)
 // }
-  // printInfo method is run to show that the newguy object was successfully created and filled
-  firstPresidentCloze.printInfo();
+// printInfo method is run to show that the newguy object was successfully created and filled
+  //firstPresidentCloze.printInfo().catch(function(err){console.log(err)});
 });
 //     name: "position",
 //     message: "What is your current position?"
