@@ -23,21 +23,29 @@ var answers = []
 // console.log(result)
 // }
 
+
 inquirer.prompt([
   {
-    name: "answer",
-    message: "question"
-  }]).then(function(answers) {
+    name:"cloze",
+    message:"answer"
+  },
+
+  {
+    name:"fullText",
+    message:"question"
+  }
+
+  ]).then(function(answers) {
   // initializes the variable newGuy to be a programmer object which will take
   // in all of the user's answers to the questions above
+
   var firstPresidentCloze = new ClozeCard(
-    answers.message, answers.name);
+    answers.fullText, answers.cloze);
 
 	function ClozeCard(fullText, cloze) {
 
     this.fullText = fullText
     this.cloze = cloze;
-
     this.partial = function() {
         return this.fullText.replace(cloze, "___________ ")
     }
@@ -52,7 +60,7 @@ console.log(firstPresidentCloze.partial());
 console.log(firstPresidentCloze.fullText)
 // }
 // printInfo method is run to show that the newguy object was successfully created and filled
-  //firstPresidentCloze.printInfo().catch(function(err){console.log(err)});
+// firstPresidentCloze.printInfo().catch(function(err){console.log(err)});
 });
 //     name: "position",
 //     message: "What is your current position?"
