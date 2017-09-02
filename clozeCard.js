@@ -3,7 +3,8 @@
 var inquirer = require("inquirer");
 var question = ""
 var result = ""
-var answers = []
+var flash = []
+var sol= []
 
 //var clozeCard = new ClozeCard()
 
@@ -46,8 +47,21 @@ inquirer.prompt([
 
     this.fullText = fullText
     this.cloze = cloze;
+
+    console.log(this.fullText.search(cloze))
+
+    if(typeof fullText=== "undefined" || typeof cloze=== "undefined" || this.fullText.search(cloze)=== -1) {
+
+    console.log("This doesn't work, oops")
+
+    }
+
+    else{
+
     this.partial = function() {
         return this.fullText.replace(cloze, "___________ ")
+    }
+
     }
 }
 //var clozeCard = new ClozeCard()
@@ -57,7 +71,11 @@ console.log(firstPresidentCloze.cloze);
 //     answers.push(firstPresidentCloze.cloze)
 //     //console.log(answers)
 console.log(firstPresidentCloze.partial());
-console.log(firstPresidentCloze.fullText)
+console.log(firstPresidentCloze.fullText);
+flash.push(firstPresidentCloze.partial());
+sol.push(firstPresidentCloze.cloze);
+console.log(flash)
+console.log(sol)
 // }
 // printInfo method is run to show that the newguy object was successfully created and filled
 // firstPresidentCloze.printInfo().catch(function(err){console.log(err)});
