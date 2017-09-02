@@ -8,23 +8,6 @@ var sol= []
 
 //var clozeCard = new ClozeCard()
 
-
-
-// if (process.argv[2] === "fullText") {
-//     for (i = 3; i < process.argv.length; i++) {
-//         question = question+ process.argv[i] + " "
-//     }
-// 	console.log(question)
-// }
-
-// if (process.argv[2] === "result") {
-//     for (i = 3; i < process.argv.length; i++) {
-//         result = result+ process.argv[i] + " "
-//     }
-// console.log(result)
-// }
-
-
 inquirer.prompt([
   {
     name:"cloze",
@@ -66,7 +49,6 @@ inquirer.prompt([
 }
 //var clozeCard = new ClozeCard()
 // "George Washington
-// if (process.argv[2] === "cloze") {
 console.log(firstPresidentCloze.cloze);
 //     answers.push(firstPresidentCloze.cloze)
 //     //console.log(answers)
@@ -76,27 +58,11 @@ flash.push(firstPresidentCloze.partial());
 sol.push(firstPresidentCloze.cloze);
 console.log(flash)
 console.log(sol)
-// }
+
 // printInfo method is run to show that the newguy object was successfully created and filled
 // firstPresidentCloze.printInfo().catch(function(err){console.log(err)});
 });
-//     name: "position",
-//     message: "What is your current position?"
-//   }, {
-//     name: "age",
-//     message: "How old are you?"
-//   }, {
-//     name: "language",
-//     message: "What is your favorite programming language?"
-//   }
 
-
-
-
-// " ... was the first president of the United States.
-
-
-// "George Washington was the first president of the United States.
 
 
 // Should throw or log an error because "oops" doesn't appear in "This doesn't work"
