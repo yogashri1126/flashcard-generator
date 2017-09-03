@@ -7,7 +7,32 @@ var flash = []
 var sol= []
 
 //var clozeCard = new ClozeCard()
+cont()
+function cont(){
+inquirer.prompt([
 
+{
+	type: "confirm",
+	name: "query",
+	message: "Want to make more flashcards?"
+}
+	]).then(function(answers){
+
+		console.log(answers)
+		if(answers.query=== true){
+		flashcard()
+		cont()
+	}
+
+	else{
+
+		console.log(flash)
+		console.log(sol)
+	}
+	})
+}
+
+function flashcard (){
 inquirer.prompt([
   {
     name:"cloze",
@@ -56,14 +81,14 @@ console.log(firstPresidentCloze.partial());
 console.log(firstPresidentCloze.fullText);
 flash.push(firstPresidentCloze.partial());
 sol.push(firstPresidentCloze.cloze);
-console.log(flash)
-console.log(sol)
+//console.log(flash)
+//console.log(sol)
 
 // printInfo method is run to show that the newguy object was successfully created and filled
 // firstPresidentCloze.printInfo().catch(function(err){console.log(err)});
 });
 
-
+}
 
 // Should throw or log an error because "oops" doesn't appear in "This doesn't work"
 //var brokenCloze = new ClozeCard("This doesn't work", "oops");
