@@ -21,7 +21,7 @@ inquirer.prompt([
 		console.log(answers)
 		if(answers.query=== true){
 		flashcard()
-		cont()
+		
 	}
 
 	else{
@@ -81,13 +81,13 @@ console.log(firstPresidentCloze.partial());
 console.log(firstPresidentCloze.fullText);
 flash.push(firstPresidentCloze.partial());
 sol.push(firstPresidentCloze.cloze);
+cont()
 //console.log(flash)
 //console.log(sol)
 
 // printInfo method is run to show that the newguy object was successfully created and filled
 // firstPresidentCloze.printInfo().catch(function(err){console.log(err)});
 });
-
 }
 
 // Should throw or log an error because "oops" doesn't appear in "This doesn't work"
